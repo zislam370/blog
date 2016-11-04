@@ -1820,7 +1820,7 @@ h3.m_3 {
   background: none;
   position: absolute;
   top: 30px;
-  right: 20px;
+  left: 20px;
 }
 .head-nav span.menu:before{
 	content:url(../images/menu.png);
