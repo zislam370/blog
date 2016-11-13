@@ -13,7 +13,7 @@
                 <li class="{{Request::is('/')? "active":" "}}"><a href="/">Home</a></li>
                 <li class="{{Request::is('about')? "active":" "}}"><a href="#">About</a></li>
                 <li class="{{Request::is('posts')? "active":" "}}"><a href="{{route('posts.index')}}">Blog</a></li>
-s
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <div class="dropdown">

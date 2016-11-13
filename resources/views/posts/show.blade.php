@@ -10,10 +10,16 @@
             <p class="lead">{{$post -> body}}</p>
             <div class="col-md-4">
                 <div class="well">
+
+                    <dl class="dl-horizontal">
+                        <label>Url</label>
+                        <a href="{{url($post -> slug)}}">{{url($post -> slug)}}</a>
+
+                    </dl>
+
                     <dl class="dl-horizontal">
                         <dt>Create at</dt>
                         <dd>{{date('M d, Y:i',strtotime($post -> updated_at ))}}</dd>
-
                     </dl>
 
                     <dl class="dl-horizontal">
