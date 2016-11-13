@@ -12,13 +12,12 @@
 */
 
 
-
-
-
 Route::group(['middlewareGroups' => ['web']], function () {
-
+    Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])
+        ->where('slug', '[\w\d-\_]+');
+    Route::get('blog', ['uses' => 'BlogController@getIndex','as'=>'blog.index']);
     Route::get('/', "PagesController@getIndex");
     Route::get('blog', "PagesController@getBlog");
-    Route::resource('posts','PostController');
+    Route::resource('posts', 'PostController');
 
-    });
+});
