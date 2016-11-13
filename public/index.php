@@ -56,3 +56,5 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
+
+ini_set('xdebug.max_nesting_level', 200);

@@ -8,18 +8,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+
 class PagesController extends Controller {
 
 
     public function getIndex(){
 
-        return view("layouts.welcome");
+        $posts = Post::orderBy('created_at','desc')-> limit(3)-> get();
+
+        return view("layouts.welcome")->withPosts($posts);
 
     }
 
     public function getBlog(){
 
-        return view("layouts.blog");
+        return view("posts.index");
 
     }
 

@@ -1,7 +1,24 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: PRITHA
- * Date: 04-Nov-16
- * Time: 2:45 PM
- */
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+@include('partials._header')
+</head>
+
+<body>
+
+@include('partials._nav')
+
+
+<div class="container ">
+    @include('partials._messages')
+    @yield('content')
+
+</div>
+
+@yield('scripts')
+@yield('styles')
+@include('partials._footer')
+
+</body>
+</html>
