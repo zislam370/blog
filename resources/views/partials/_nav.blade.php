@@ -12,7 +12,7 @@
             <ul class="nav navbar-nav">
                 <li class="{{Request::is('/')? "active":" "}}"><a href="/">Home</a></li>
                 <li class="{{Request::is('about')? "active":" "}}"><a href="#">About</a></li>
-                <li class="{{Request::is('posts')? "active":" "}}"><a href="{{route('posts.index')}}">Blog</a></li>
+                <li class="{{Request::is('posts')? "active":" "}}"><a href="{{route('blog.index')}}">Blog</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -20,8 +20,8 @@
                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Account Type
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Admin</a></li>
-                        <li><a href="#">User</a></li>
+                        <li><a href="{{route('posts.index')}}">Admin</a></li>
+                        <li><a href="{{route('blog.index')}}">User</a></li>
 
                     </ul>
                 </div>

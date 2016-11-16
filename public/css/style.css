@@ -16,3 +16,10 @@
 }
 
 
+.blog_box {
+	margin-top: 20px;
+	margin-bottom: 40px;
+	margin-left: 10px;
+	background: #a7fece;
+	padding: 20px;
+}
