@@ -19,5 +19,6 @@ Route::group(['middlewareGroups' => ['web']], function () {
     Route::get('/', "PagesController@getIndex");
     //Route::get('blog', "PagesController@getBlog");
     Route::resource('posts', 'PostController');
+    Route::resource('categories', 'CategoryController',['except'=>['create']]);
 
 });

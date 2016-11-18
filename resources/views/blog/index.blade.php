@@ -16,8 +16,8 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h2>{{$post->post_title}}</h2>
                     <h5>{{date('M j Y',strtotime($post->created_at))}}</h5>
-                    <p>{{substr($post ->body,0,250)}}{{strlen($post->body)>250? "...":''}}</p>
-                    <a href="{{route('blog.single',$post->id)}}" class="btn btn-primary">Read More</a>
+                    <p>{{substr($post ->body,0,250)}}{{strlen($post->body)>250? '...':""}}</p>
+                    <a href="{{route('blog.single',$post ->slug)}}" class="btn btn-primary">Read More</a>
                 </div>
             </div>
         </div>

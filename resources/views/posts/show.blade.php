@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <h1>Title:{{ $post -> post_title }} </h1>
-            <h2>{{ $post -> category }}</h2>
+            <h2>{{ $post -> category_id }}</h2>
             <p class="lead">{{$post -> body}}</p>
             <div class="col-md-4">
                 <div class="well">

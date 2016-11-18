@@ -9,8 +9,8 @@
     {!! Form::open(['route' => 'posts.store','data-parsley-validate' => '' ]) !!}
     {{Form::label('post_title','Title:')}}
     {{Form::text('post_title',null,array ('class'=>'form-control','required' => '','maxlength' => '50'))}}
-    {{Form::label('category','Category:')}}
-    {{Form::text('category',null,array ('class'=>'form-control','required' => '','maxlength' => '30'))}}
+    {{--{{Form::label('category','Category:')}}--}}
+    {{--{{Form::text('category',null,array ('class'=>'form-control','required' => '','maxlength' => '30'))}}--}}
 
     {{Form::label('slug','Slug:')}}
     {{Form::text('slug',null,array ('class'=>'form-control','required' => '','minlength'=>'5','maxlength' => '225'))}}
