@@ -13,7 +13,11 @@
             {{--{{Form::text('category',null,array ('class'=>'form-control','required' => '','maxlength' => '30'))}}--}}
             {{Form::label('slug','Slug:')}}
             {{Form::text('slug',null,array ('class'=>'form-control','required' => '','minlength'=>'5','maxlength' => '225'))}}
-            {{Form::label('body','Write new post:')}}
+
+            {{Form::label('category_id','Category:')}}
+            {{ Form::select('category_id',$categories,null,['class'=>'form-control']) }}
+
+            {{Form::label('body','Edit  post:')}}
             {{Form::textarea('body',null,array ('class'=>'form-control','required' => '','maxlength' => '5000'))}}
 
             <div class="col-md-4">
@@ -37,7 +41,7 @@
                         </div>
                         <div class="col-sm-6">
 
-                            {{Form::submit('Submite Post',array('class'=>'btn btn-default btn-success'))}}
+                            {{Form::submit('Submit Post',array('class'=>'btn btn-default btn-success'))}}
 
 
                         </div>

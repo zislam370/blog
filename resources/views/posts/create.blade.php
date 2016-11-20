@@ -15,6 +15,19 @@
     {{Form::label('slug','Slug:')}}
     {{Form::text('slug',null,array ('class'=>'form-control','required' => '','minlength'=>'5','maxlength' => '225'))}}
 
+    {{Form::label('category','Category:')}}
+
+    <select class="form-control" name="category_id">
+
+        @foreach($category as $category)
+
+            <option value="{{$category->id}}">{{$category->name}}</option>
+
+        @endforeach
+
+    </select>
+
+
     {{Form::label('body','Write new post:')}}
     {{Form::textarea('body',null,array ('class'=>'form-control','required' => '','maxlength' => '5000'))}}
     {{Form::submit('Submit Post',array('class'=>'btn btn-success btn-lg btn-block','style'=>'margin-top:20px;'))}}

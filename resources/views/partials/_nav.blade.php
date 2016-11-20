@@ -22,6 +22,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{route('posts.index')}}">Admin</a></li>
                         <li><a href="{{route('blog.index')}}">User</a></li>
+                        <li><a href="{{route('categories.index')}}">Categories</a></li>
 
                     </ul>
                 </div>

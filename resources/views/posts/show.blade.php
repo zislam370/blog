@@ -16,6 +16,12 @@
                         <a href="{{url($post -> slug)}}">{{url($post -> slug)}}</a>
 
                     </dl>
+                    <dl class="dl-horizontal">
+                        <label>Ctegory</label>
+                        <p>{{$post->category->name}}</p>
+
+                    </dl>
+
 
                     <dl class="dl-horizontal">
                         <dt>Create at</dt>
