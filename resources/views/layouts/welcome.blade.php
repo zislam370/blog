@@ -15,9 +15,9 @@
 
             <div class="box">
             <h2>{{$post -> post_title}}</h2>
-            <h3>{{$post -> category}} </h3>
+            <h3>{{$post -> category->name}} </h3>
             <p>{{substr($post->body,0,50)}}{{strlen($post->body)>50? "...":''}} </p>
-                <a href="#" class="btn bg-primary">Read more</a>
+                <a href="{{route('blog.single',$post ->slug)}}" class="btn bg-primary">Read more</a>
 
         </div>
         </div>

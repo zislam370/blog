@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-md-12 col-md-offset-2">
-            <h1>Blog</h1>
+            <h1>All Blogpost</h1>
         </div>
     </div>
 

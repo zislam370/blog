@@ -13,9 +13,17 @@
 
         <div class="col-sm-2">
 
-            <a href="{{route('posts.create')}}" class=" btn btn-lg btn-block btn-primary btn-h1-spece{">New Post</a>
+            <a href="{{route('posts.create')}}" class=" btn btn-lg btn-block btn-primary btn-h1-space">New Post</a>
 
         </div>
+
+        <div class="col-sm-2">
+
+            <a href="{{route('categories.index')}}" class=" btn btn-lg btn-block btn-primary btn-h1-space">Manage Category</a>
+
+        </div>
+
+
         <div class="col-md-12">
             <hr>
         </div>
@@ -42,7 +50,7 @@
                     <tr>
                         <th>{{$post->id}}</th>
                         <th>{{$post->post_title}}</th>
-                        <th>{{$post->category_id}}</th>
+                        <th>{{$post->category->name}}</th>
                         <th>{{substr($post->body,0,50)}}{{strlen($post->body)>50? "...":''}}</th>
                         <th>{{$post->created_at}}</th>
                         <th><a href="{{route('posts.show',$post ->id)}}" class="btn btn-default">View</a> <a href="{{route('posts.edit',$post -> id)}}"class="btn btn-default">Edit</a> </th>

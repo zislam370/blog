@@ -43,7 +43,7 @@
                 {{ Form::label('name','Name:') }}
                 {{ Form::text('name',null,['class'=>'form-control']) }}
 
-                {{Form::submit('Create new Category',['class'=>'btn btn-primary btn-block btn-h1-spacing'])}}
+                {{Form::submit('Create new Category',['class'=>'btn btn-primary btn-block btn-h1-space'])}}
                 {!!Form::close() !!}
 
             </div>

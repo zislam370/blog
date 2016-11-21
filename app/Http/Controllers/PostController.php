@@ -114,14 +114,14 @@ class PostController extends Controller
         if ($request->input('slug') == $post->slug) {
             $this->validate($request, array(
                 'post_title' => 'required|max:30',
-                //'category_id' => 'required|integer',
+                'category_id' => 'required|integer',
                 'body' => 'required|max:5000',
             ));
 
         } else {
             $this->validate($request, array(
                 'post_title' => 'required|max:30',
-               // 'category_id' => 'required|integer',
+               'category_id' => 'required|integer',
                 'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
                 'body' => 'required|max:5000',
             ));
@@ -131,7 +131,7 @@ class PostController extends Controller
 
         $post = Post::find($id);
         $post->post_title = $request->input('post_title');
-        //$post->category_id = $request->input('category_id');
+        $post->category_id = $request->input('category_id');
         $post->slug = $request->input('slug');
         $post->body = $request->input('body');
         $post->save();
