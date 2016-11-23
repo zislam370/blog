@@ -9,6 +9,8 @@
             <h2>{{ $post -> category_id }}</h2>
             <p class="lead">{{$post -> body}}</p>
             <div class="col-md-4">
+
+
                 <div class="well">
 
                     <dl class="dl-horizontal">
@@ -46,7 +48,7 @@
                         <div class="col-sm-4">
                             {!!Form:: model($post,['route'=>['posts.destroy',$post->id],'method'=>'DELETE'])!!}
                             {{Form::submit('Delete',array('class'=>'btn btn-danger btn-primary'))}}
-                           {!! Form::close() !!}
+                            {!! Form::close() !!}
 
                         </div>
 
@@ -54,7 +56,45 @@
 
                 </div>
 
+
             </div>
+
+
+
+        </div>
+        <div id="backend-comment" style="margin-top: 50px;">
+            <h2>Comments
+                <small>  {{$post->comments()->count()}} total</small>
+            </h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Comments</th>
+                    <th></th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+                @foreach($post->comments as $comment)
+
+                    <tr>
+                        <td>{{$comment->name}}</td>
+                        <td>{{$comment->email}}</td>
+                        <td>{{$comment->comment}}</td>
+                        <td>
+                            {!!Form:: model($comment,['route'=>['comments.destroy',$comment->id],'method'=>'DELETE'])!!}
+                            {{Form::submit('Delete',array('class'=>'btn btn-danger btn-primary'))}}
+                            {!! Form::close() !!}
+
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+
+            </table>
         </div>
     </div>
 @endsection

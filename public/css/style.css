@@ -1,25 +1,65 @@
-.btn-h1-spece{
+.btn-h1-spece {
 
-	margin-top: 18px;
+    margin-top: 18px;
 
 }
 
 .box {
 
-	background-color: lightgrey;
-	width: auto;
-	height: auto;
-	border: 5px solid green;
-	padding: 5px;
-	margin: 5px;
+    background-color: lightgrey;
+    width: auto;
+    height: auto;
+    border: 5px solid green;
+    padding: 5px;
+    margin: 5px;
 
 }
 
-
 .blog_box {
-	margin-top: 20px;
-	margin-bottom: 40px;
-	margin-left: 10px;
-	background: #a7fece;
-	padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    background: #a7fece;
+    padding: 20px;
+}
+
+.author-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+}
+
+.comment {
+    margin-bottom: 45px;
+}
+
+.author-name {
+    float: left;
+    margin-left: 15px ;
+}
+
+.author-name > h4 {
+
+    margin: 5px 0px;
+
+}
+.author-time{
+
+    font-size: 11px;
+    font-style: italic;
+    color: #dddddd;
+}
+.comment-content {
+    clear: both;
+    margin-left: 65px;
+    font-size: 16px;
+    line-height: 1.3em;
+}
+
+.comment-title{
+    margin-bottom: 45px;
+}
+.comment-title>span{
+    margin-right: 15px;
 }
