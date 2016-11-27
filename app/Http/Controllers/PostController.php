@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Post;
+use Intervention\Image\Facades\Image as Image;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Session;
+
+
 
 class PostController extends Controller
 {
@@ -55,6 +58,17 @@ class PostController extends Controller
         $post->category_id = $request->category_id;
         $post->slug = $request->slug;
         $post->body = $request->body;
+
+        if ($request->hasFile('featured_image')) {
+
+            $image = $request->file('featured_image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/'.$filename);
+            Image::make($image)->resize(800,500)->save($location);
+            $post->image = $filename;
+        }
+
+
         $post->save();
 
         Session::flash('success', 'Blog post successfully');
@@ -87,13 +101,13 @@ class PostController extends Controller
     {
 
         $post = Post::find($id);
-       $categories = Category::all();
+        $categories = Category::all();
         $cats = array();
 
-        foreach ($categories as $category){
-            $cats [$category->id]=$category->name;
+        foreach ($categories as $category) {
+            $cats [$category->id] = $category->name;
 
-    }
+        }
 
 
         return view('posts.edit')->withPost($post)->withCategories($cats);
@@ -121,7 +135,7 @@ class PostController extends Controller
         } else {
             $this->validate($request, array(
                 'post_title' => 'required|max:30',
-               'category_id' => 'required|integer',
+                'category_id' => 'required|integer',
                 'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
                 'body' => 'required|max:5000',
             ));

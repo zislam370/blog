@@ -2,11 +2,19 @@
 @section('title','|Blog')
 @section('styles')
     {!! Html::style('css/parsley.css') !!}
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({
+            selector: 'textarea',
+            plugins: 'link code image'
+        });</script>
+
 @endsection
 @section('content')
     <h1> Create A new Post </h1>
 
-    {!! Form::open(['route' => 'posts.store','data-parsley-validate' => '' ]) !!}
+
+
+    {!! Form::open(['route' => 'posts.store','data-parsley-validate' => '','files'=>true ]) !!}
     {{Form::label('post_title','Title:')}}
     {{Form::text('post_title',null,array ('class'=>'form-control','required' => '','maxlength' => '50'))}}
     {{--{{Form::label('category','Category:')}}--}}
@@ -27,6 +35,10 @@
 
     </select>
 
+    {{--image upload--}}
+
+    {{Form::label('featured_image','Upload Image')}}
+    {{Form::file('featured_image')}}
 
     {{Form::label('body','Write new post:')}}
     {{Form::textarea('body',null,array ('class'=>'form-control','required' => '','maxlength' => '5000'))}}

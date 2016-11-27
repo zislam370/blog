@@ -9,7 +9,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="images/8.jpg" alt="Image">
+            <img src="images/c_plus.jpg" alt="Image">
             <div class="carousel-caption">
                 <h3>Sell $</h3>
                 <p>Money Money.</p>

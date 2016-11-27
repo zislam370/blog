@@ -1,6 +1,14 @@
 @extends('main')
 @section('title','|Edit Post')
+@section('styles')
+    {!! Html::style('css/parsley.css') !!}
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({
+            selector: 'textarea',
+            plugins: 'link code image'
+        });</script>
 
+@endsection
 @section('content')
 
     <div class="row">
@@ -18,7 +26,7 @@
             {{ Form::select('category_id',$categories,null,['class'=>'form-control']) }}
 
             {{Form::label('body','Edit  post:')}}
-            {{Form::textarea('body',null,array ('class'=>'form-control','required' => '','maxlength' => '5000'))}}
+            {!!  Form::textarea('body',null,array ('class'=>'form-control','required' => '','maxlength' => '5000'))!!}
 
             <div class="col-md-4">
                 <div class="well">
@@ -55,4 +63,8 @@
         {!! Form::close() !!}
     </div>
 
+@endsection
+
+@section('scripts')
+    {!! Html::script('js/parsley.min.js') !!}
 @endsection

@@ -51,7 +51,7 @@
                         <th>{{$post->id}}</th>
                         <th>{{$post->post_title}}</th>
                         <th>{{$post->category->name}}</th>
-                        <th>{{substr($post->body,0,50)}}{{strlen($post->body)>50? "...":''}}</th>
+                        <th>{!!substr($post->body,0,50)!!}{!!  strlen($post->body)>50? "...":''!!}</th>
                         <th>{{$post->created_at}}</th>
                         <th><a href="{{route('posts.show',$post ->id)}}" class="btn btn-default">View</a> <a href="{{route('posts.edit',$post -> id)}}"class="btn btn-default">Edit</a> </th>
                     </tr>

@@ -11,9 +11,9 @@
     <div class="row">
 
         <div class="col-md-8 col-md-offset-2">
-
+            <img src="{{asset('images/'.$post->image)}}">
             <h1>{{$post ->post_title}}</h1>
-            <p>{{$post->body}}</p>
+            <p>{!!  $post->body!!}</p>
             <hr>
             <p>Category:{{isset($post->category->name) ? $post->category->name : ''}}</p>
 
@@ -61,11 +61,13 @@
 
     <div class="row">
         <div class="col-sm-8 col-md-offset-2 ">
-            <h2 class="comment-title "><span class="glyphicon glyphicon-comment"></span>{{$post->comments()->count()}} Comments</h2>
+            <h2 class="comment-title "><span class="glyphicon glyphicon-comment"></span>{{$post->comments()->count()}}
+                Comments</h2>
             @foreach($post->comments as $comment)
                 <div class="comment">
                     <div class="author-info">
-                        <img src="{{"https://www.gravatar.com/avatar/".md5(strtolower(trim($comment->email)))}}" class="author-img">
+                        <img src="{{"https://www.gravatar.com/avatar/".md5(strtolower(trim($comment->email)))."?s=50&d=monsterid"}}"
+                             class="author-img">
                         <div class="author-name">
                             <h4>{{$comment->name}}</h4>
                             <p class="author-time">
